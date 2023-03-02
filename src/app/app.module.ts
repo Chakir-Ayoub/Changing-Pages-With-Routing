@@ -12,7 +12,8 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
 import { Routes } from '@angular/router';
-import {RouterModule} from '@angular/router'
+import {RouterModule} from '@angular/router';
+import { PageNotFoudComponent } from './page-not-foud/page-not-foud.component'
 const appRoutes:Routes=[
   {path:'',component: HomeComponent},
   {path:'user',component: UsersComponent,children:[
@@ -22,6 +23,8 @@ const appRoutes:Routes=[
     {path:':id/edit',component:EditServerComponent},
     {path:':id',component:ServerComponent}
   ]},
+  {path:'not-found',component:PageNotFoudComponent},
+  {path:'**',redirectTo:'not-found',pathMatch:'full'}
 
 ]
 @NgModule({
@@ -32,7 +35,8 @@ const appRoutes:Routes=[
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    PageNotFoudComponent
   ],
   imports: [
     BrowserModule,
