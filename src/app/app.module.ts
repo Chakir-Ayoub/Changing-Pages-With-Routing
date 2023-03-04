@@ -1,3 +1,4 @@
+import { ServerResolver } from './servers/server/server-resolver.service';
 import { CanDeactivatedGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
@@ -35,7 +36,7 @@ import { ErrorPageComponent } from './error-page/error-page.component'
     FormsModule,
     RoutingModule
   ],
-  providers: [ServersService,AuthGuard,AuthService,CanDeactivatedGuard],
+  providers: [ServersService,AuthGuard,AuthService,CanDeactivatedGuard,ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
