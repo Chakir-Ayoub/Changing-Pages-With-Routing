@@ -1,3 +1,4 @@
+import { CanDeactivatedGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { RoutingModule } from './app-routing.module';
@@ -32,7 +33,7 @@ import { PageNotFoudComponent } from './page-not-foud/page-not-foud.component'
     FormsModule,
     RoutingModule
   ],
-  providers: [ServersService,AuthGuard,AuthService],
+  providers: [ServersService,AuthGuard,AuthService,CanDeactivatedGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
