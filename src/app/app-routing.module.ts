@@ -14,10 +14,15 @@ const appRoutes:Routes=[
   {path:'user',component: UsersComponent,children:[
     {path:':id/:name',component:UserComponent},
   ]},
-  {path:'servers',canActivate:[AuthGuard],component:ServersComponent,children:[
+
+  {
+    path:'servers',
+    canActivateChild:[AuthGuard],
+    component:ServersComponent,children:[
     {path:':id/edit',component:EditServerComponent},
     {path:':id',component:ServerComponent}
   ]},
+
   {path:'not-found',component:PageNotFoudComponent},
   {path:'**',redirectTo:'not-found',pathMatch:'full'}
 
